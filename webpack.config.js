@@ -12,6 +12,7 @@ module.exports = {
 	output:{
 		path:resolve(__dirname, "dist"),
 		filename: "index.js", 
+		publicPath:'/'
 	},
 
 	//工作模式
@@ -90,7 +91,8 @@ module.exports = {
 					pathRewrite: {'^/api' : ''}, //改写路径
 					changeOrigin: true, //如果前台脚手架的主机名和服务器的主机名不一致，则需要changeOrigin: true
 			}
-	},
+		},
+		historyApiFallback: true, //任意的404响应都会被代替为 index.html备胎
 	},
 
 	//配置省略后缀
